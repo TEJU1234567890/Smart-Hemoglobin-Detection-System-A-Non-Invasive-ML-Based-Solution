@@ -124,8 +124,8 @@ else:
         st.markdown("<h2>🔬🩸Anemia Shield: Detect & Prevent</h2>", unsafe_allow_html=True)
         st.subheader("Your Smart Health Companion for Anemia Diagnosis")
         try:
-            img = Image.open(r"C:\Users\rutuj\OneDrive\Desktop\streamlit\anemia.webp").resize((620, 400))
-            st.image(img, use_column_width=500)
+            img = Image.open(r"anemia.webp").resize((620, 400))
+            st.image(img, use_container_width=500)
         except Exception as e:
             st.error(f"Error loading image: {e}")
         st.markdown("""
@@ -138,7 +138,7 @@ else:
         st.subheader("🩺 Start Your Anemia Diagnosis Now! 🩺")
 
     def diagnosis_page():
-        with open(r"C:\Users\rutuj\OneDrive\Desktop\streamlit\anemia_detector (1).pkl", "rb") as model_file:
+        with open(r"anemia_detector (1).pkl", "rb") as model_file:
             model = pickle.load(model_file)
 
         def classify_anemia(hemoglobin, category):
